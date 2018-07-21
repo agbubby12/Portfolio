@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Button Generator</title>
+        <style>
+            button {
+                width: 80px;
+                height: 80px;
+                border: none;
+                margin: 2px;
+
+                background: yellow;
+            }
+
+            button:nth-child(2n) {
+                background: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Button Generator by Agustin Kims</h1>
+        <a href="../index.html">Back to Main</a>
+        <br></br>
+
+        <script>
+            let num = 1;
+            let id = setInterval(function() {
+                let btn = document.createElement('button');
+                btn.classList.add("button");
+                btn.innerText = num++;
+                document.body.appendChild(btn);
+                
+                btn.addEventListener('click', function() {
+                    if (num == 18) {
+                        btn.innerText("Win!");
+                    }
+                    btn.style.background = "white";
+                });
+
+                if (num == 31) 
+                    clearInterval(id);
+            }, 100);
+        </script>
+    </body>
+</html>
