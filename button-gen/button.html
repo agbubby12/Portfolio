@@ -14,11 +14,15 @@
             button:nth-child(2n) {
                 background: skyblue;
             }
+            button:hover {
+                background: red;
+            }
         </style>
     </head>
     <body>
         <h1>Button Generator by Agustin Kims</h1>
         <a href="../index.html">Back to Main</a>
+        <p>Click to find winning button!</p>
         <br></br>
 
         <script>
@@ -30,10 +34,11 @@
                 document.body.appendChild(btn);
                 
                 btn.addEventListener('click', function() {
-                    if (num == 18) {
+                    if (num == Math.floor(Math.random() * 30)) {
                         btn.innerText("Win!");
                     }
                     btn.style.background = "white";
+                    btn.style.color = "white";
                 });
 
                 if (num == 31) 
